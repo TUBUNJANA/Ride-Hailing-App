@@ -29,15 +29,16 @@
 // ********************************************************************************************************************
 const http = require('http');
 const app = require('./app');
+const { initializeSocket } = require('./socket');
 const port = process.env.PORT || 3000;
 
 
 // Create a server and listen to the port 3000 or the port defined in the environment variable.
 const server = http.createServer(app);
-
+initializeSocket(server);
 
 // Listen to the server on the port 3000 or the port defined in the environment variable.
-server.listen(port,()=>{
+server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 

@@ -36,6 +36,8 @@ const cors = require('cors');
 const connectDB = require('./db/db');
 const userRouter = require('./routes/user.routes');
 const captainRouter = require('./routes/captain.routes');
+const mapsRoutes = require('./routes/maps.routes')
+const rideRoutes = require('./routes/ride.routes')
 const cookieParser = require('cookie-parser');
 
 
@@ -63,11 +65,15 @@ app.use(express.urlencoded({ extended: true }));
 
 // ********************************************************************************************************************
 // Home Route for the API (Backend) to check if the server is running.
-app.get('/', (req, res) => {res.send('Hello World');});
+app.get('/', (req, res) => { res.send('Hello World'); });
 // User Routes for the API (Backend) to handle user requests.
 app.use('/api/v1/users', userRouter);
 // Captain Routes for the API (Backend) to handle captain requests.
 app.use('/api/v1/captains', captainRouter);
+// Map Routes for the API (Backend) to handle map requests.
+app.use('/api/v1/maps', mapsRoutes);
+// Ride Routes for the API (Backend) to handle ride requests.
+app.use('/api/v1/rides', rideRoutes);
 
 
 

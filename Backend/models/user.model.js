@@ -68,7 +68,7 @@ const userSchema = new mongoose.Schema({
         maxlength: [64, "At most 64 characters allowed"],
         select: false
     },
-    sockeId: {
+    socketId: {
         type: String,
     }
 },

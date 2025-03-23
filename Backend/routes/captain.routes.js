@@ -69,7 +69,7 @@ router.post('/login', [
     captainController.loginCaptain);
 
 // 3. Get Captain route for the captain - GET Request - /api/v1/captains/getCaptain
-router.get('/getCaptain', authMiddleware.authCaptain, captainController.getCaptain);
+router.get('/profile', authMiddleware.authCaptain, captainController.getCaptain);
 
 // 4. Logout a captain - GET Request - /api/v1/captains/logout
 router.get('/logout', authMiddleware.authCaptain, captainController.logoutCaptain);

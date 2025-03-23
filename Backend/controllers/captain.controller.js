@@ -109,7 +109,6 @@ const loginCaptain = async (req, res, next) => {
     res.status(200).json({ captain, token });
 };
 
-
 // 3. Get Captain - GET Request - /api/v1/captains/getCaptain
 const getCaptain = async (req, res, next) => {
     // Get the captain from the request
